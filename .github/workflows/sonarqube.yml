@@ -41,6 +41,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: test
+        run: echo ${PWD}
+        
       - name: Analyze with SonarQube
 
         # You can pin the exact commit or the version.

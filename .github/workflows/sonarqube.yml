@@ -55,7 +55,8 @@ jobs:
           args:
             # Unique key of your project. You can find it in SonarQube > [my project] > Project Information (top-right menu)
             # mandatory
-            #-Dsonar.sources=
+            -Dsonar.sources=src/
             -Dsonar.projectKey=Test_Scan_GitHub
-            -Dsonar.projectBaseDir=/github/workspace/src
             -Dsonar.verbose=true # optional, default is false
+            #-Dsonar.projectBaseDir=/github/workspace/src
+

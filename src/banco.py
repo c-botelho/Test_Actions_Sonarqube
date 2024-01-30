@@ -124,7 +124,7 @@ def main():
 
         elif opcao == "2":
             valor = float(input("Valor a ser Sacado: "))
-            saldo = saque(saldo=saldo, valor_saque=valor, lista_extrato=lista_extrato, numero_saques=numero_saques, LIMITE_SAQUES=LIMITE_SAQUES, limite=limite)
+            saldo = saque(saldo=saldo, valor_saque=valor, lista_extrato=lista_extrato, numero_saques=numero_saques, limite_saques=LIMITE_SAQUES, limite=limite)
             print(extrato(saldo, lista_extrato))
 
         elif opcao == "3":

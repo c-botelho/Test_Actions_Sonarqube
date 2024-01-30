@@ -57,5 +57,5 @@ jobs:
             # mandatory
             #-Dsonar.sources=
             -Dsonar.projectKey=Test_Scan_GitHub
-            -Dsonar.projectBaseDir=src/
+            -Dsonar.projectBaseDir=/github/workspace/src
             -Dsonar.verbose=true # optional, default is false

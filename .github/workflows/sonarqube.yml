@@ -42,7 +42,9 @@ jobs:
 
     steps:
       - name: test
-        run: cat ${PWD}
+        run: ls ${PWD}
+      - name: test2
+        run: ls /github/workspace/
         
       # - name: Analyze with SonarQube
 

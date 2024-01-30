@@ -42,7 +42,7 @@ jobs:
 
     steps:
       - name: test
-        run: ls ${PWD}
+        run: ls ./
       - name: test2
         run: ls /github/workspace/
         

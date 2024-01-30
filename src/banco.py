@@ -13,7 +13,7 @@ def deposito(saldo, valor_deposito, lista_extrato, /):
 
 def saque(*,saldo, valor_saque, lista_extrato, numero_saques, limite_saques, limite):
         OPERACAO = "Saque"
-        if valor_saque <= limite and numero_saques < limite_saque and saldo >= valor_saque:
+        if valor_saque <= limite and numero_saques < limite_saques and saldo >= valor_saque:
             numero_saques += 1
             saldo -= valor_saque
             lista_extrato.append([OPERACAO, valor_saque])

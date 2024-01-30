@@ -42,9 +42,7 @@ jobs:
 
     steps:
       - name: test
-        run: ls ./
-      - name: test2
-        run: ls src/
+        run: pwd
         
       # - name: Analyze with SonarQube
 

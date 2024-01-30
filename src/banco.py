@@ -11,9 +11,9 @@ def deposito(saldo, valor_deposito, lista_extrato, /):
             return saldo
 
 
-def saque(*,saldo, valor_saque, lista_extrato, numero_saques, LIMITE_SAQUES, limite):
+def saque(*,saldo, valor_saque, lista_extrato, numero_saques, limite_saques, limite):
         OPERACAO = "Saque"
-        if valor_saque <= limite and numero_saques < LIMITE_SAQUES and saldo >= valor_saque:
+        if valor_saque <= limite and numero_saques < limite_saque and saldo >= valor_saque:
             numero_saques += 1
             saldo -= valor_saque
             lista_extrato.append([OPERACAO, valor_saque])
@@ -153,7 +153,3 @@ def main():
             print("Operação inválida, por favor selecione novamente a operação desejada")
 
 main()
-
-# print(saque(saldo=saldo, lista_extrato=lista_extrato, numero_saques=numero_saques, LIMITE_SAQUES=LIMITE_SAQUES, funcao=extrato))
-# print(deposito(saldo, lista_extrato, extrato))
-# print(extrato(saldo, lista_extrato=lista_extrato))

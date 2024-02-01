@@ -92,6 +92,6 @@ jobs:
             -Dsonar.projectKey=Test_Scan_GitHub
             -Dsonar.verbose=true
             -Dsonar.python.coverage.reportPaths=coverage.xml
-            -Dsonar.coverage.exclusions=**/tests/**,**/test_*.py
+            -Dsonar.coverage.exclusions=src/tests/**,src/test_*.py
             #-Dsonar.projectBaseDir=/github/workspace/src
 

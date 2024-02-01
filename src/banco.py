@@ -3,20 +3,18 @@ import sys
 import textwrap
 
 
-def deposito(saldo, valor_deposito, lista_extrato, /):
-        OPERACAO = "Depósito"
-        if valor_deposito > 0:
-            saldo += valor_deposito
-            lista_extrato.append([OPERACAO, valor_deposito])
-            return saldo
+def deposito(saldo, valor_deposito, lista_extrato):
+    if valor_deposito > 0:
+        saldo += valor_deposito
+        lista_extrato.append(["Depósito", valor_deposito])
+    return saldo
 
 
 def saque(*,saldo, valor_saque, lista_extrato, numero_saques, limite_saques, limite):
-        OPERACAO = "Saque"
         if valor_saque <= limite and numero_saques < limite_saques and saldo >= valor_saque:
             numero_saques += 1
             saldo -= valor_saque
-            lista_extrato.append([OPERACAO, valor_saque])
+            lista_extrato.append(["Saque", valor_saque])
             return saldo
         elif valor_saque > limite:
             print("ERRO: Limite de saque é de R$500 reais")
@@ -70,7 +68,7 @@ def retorna_usuarios(usuarios):
                     CPF: {usuario['cpf']}
                     Nome: {usuario['nome']}
                     Data de Nascimento: {usuario['data_nascimento']}
-                    Endereço {usuario['endereco']}\n
+                    Endereço {usuario['endereco']}
                 """))
         print("=" * 100)
 
@@ -79,7 +77,7 @@ def retorna_contas(contas):
         print(textwrap.dedent(f"""
                     Agencia: {conta['agencia']}
                     Títular: {conta['usuario']['nome']} 
-                    Número da conta: {conta['numero_conta']}\n
+                    Número da conta: {conta['numero_conta']}
                 """))
         print("=" * 100)
 

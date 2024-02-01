@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from banco import menu
+from src.banco import menu
 
 class TestBanco(unittest.TestCase):
     @patch('builtins.input', return_value="1")

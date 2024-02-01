@@ -1,5 +1,5 @@
 import unittest
-from banco import saque
+from src.banco import saque
 
 class TestBanco(unittest.TestCase):
     def setUp(self):

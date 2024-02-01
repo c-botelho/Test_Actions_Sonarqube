@@ -2,17 +2,21 @@ import unittest
 import textwrap
 import io
 import sys
-from banco import retorna_contas
+from src.banco import retorna_contas
 
-class TestBanco(unittest.TestCase):
+class TestRetornaContas(unittest.TestCase):
     def setUp(self):
-        self.usuarios = [
-            {"nome": "Alice", "data_nascimento": "1990-01-01", "endereco": "123 Street", "cpf": "12345678901"},
-            {"nome": "Bob", "data_nascimento": "1980-01-01", "endereco": "456 Avenue", "cpf": "23456789012"},
-        ]
         self.contas = [
-            {"agencia": "001", "usuario": self.usuarios[0], "numero_conta": 1},
-            {"agencia": "002", "usuario": self.usuarios[1], "numero_conta": 2},
+            {
+                'agencia': '001',
+                'usuario': {'nome': 'Alice'},
+                'numero_conta': '1'
+            },
+            {
+                'agencia': '002',
+                'usuario': {'nome': 'Bob'},
+                'numero_conta': '2'
+            }
         ]
 
     def test_retorna_contas(self):

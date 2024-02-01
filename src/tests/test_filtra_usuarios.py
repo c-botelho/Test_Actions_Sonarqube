@@ -1,5 +1,5 @@
 import unittest
-from banco import filtra_usuarios
+from src.banco import filtra_usuarios
 
 class TestBanco(unittest.TestCase):
     def setUp(self):

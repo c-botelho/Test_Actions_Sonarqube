@@ -1,5 +1,5 @@
 import unittest
-from banco import criar_usuario
+from src.banco import criar_usuario
 
 class TestBanco(unittest.TestCase):
     def setUp(self):

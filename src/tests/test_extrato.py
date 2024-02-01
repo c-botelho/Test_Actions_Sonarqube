@@ -1,5 +1,5 @@
 import unittest
-from banco import extrato
+from src.banco import extrato
 from io import StringIO
 import sys
 
@@ -10,11 +10,11 @@ class TestBanco(unittest.TestCase):
 
     def test_extrato(self):
         expected_output = "\n".join([
-            "===========Extrato===========",
+            "Extrato".center(30 , "="),
             "\nDepósito - R$ 500.00",
             "\nSaque - R$ 200.00",
             "\nSaldo atual: R$ 1000.00",
-            "==============================",
+            "=".center(30, "="),
             ""
         ])
         actual_output = extrato(self.saldo, self.lista_extrato)

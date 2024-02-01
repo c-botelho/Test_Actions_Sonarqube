@@ -2,7 +2,7 @@ import unittest
 import textwrap
 import io
 import sys
-from banco import retorna_usuarios
+from src.banco import retorna_usuarios
 
 class TestBanco(unittest.TestCase):
     def setUp(self):

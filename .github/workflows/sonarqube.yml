@@ -45,9 +45,19 @@ jobs:
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=$PWD/src" >> $GITHUB_ENV
 
-      - name: Run tests
+      - name: Install dependencies
         run: |
-          python -m unittest discover -s src/tests
+          python -m pip install --upgrade pip
+          pip install coverage coverage2clover
+
+      - name: Run tests with coverage
+        run: |
+          coverage run -m unittest discover -s src/tests
+
+      - name: Generate coverage report
+        run: |
+          coverage xml
+          coverage2clover -i coverage.xml -o clover.xml
 
   Analysis:
     runs-on: ubuntu-latest
@@ -72,6 +82,7 @@ jobs:
             # mandatory
             -Dsonar.sources=src/
             -Dsonar.projectKey=Test_Scan_GitHub
-            -Dsonar.verbose=true # optional, default is false
+            -Dsonar.verbose=true
+            -Dsonar.python.coverage.reportPaths=clover.xml
             #-Dsonar.projectBaseDir=/github/workspace/src
 

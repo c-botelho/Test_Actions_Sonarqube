@@ -91,6 +91,6 @@ jobs:
             -Dsonar.sources=src/
             -Dsonar.projectKey=Test_Scan_GitHub
             -Dsonar.verbose=true
-            -Dsonar.python.coverage.reportPaths=coverage.xml
+            -Dsonar.python.coverage.reportPaths=clover.xml
             #-Dsonar.projectBaseDir=/github/workspace/src
 

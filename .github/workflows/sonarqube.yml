@@ -37,9 +37,8 @@ permissions:
   pull-requests: read # allows SonarQube to decorate PRs with analysis results
 
 jobs:
-  Analysis:
+  Tests:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -49,6 +48,13 @@ jobs:
       - name: Run tests
         run: |
           python -m unittest discover -s src/tests
+
+  Analysis:
+    runs-on: ubuntu-latest
+    needs: Tests
+
+    steps:
+      - uses: actions/checkout@v4
 
       - name: Analyze with SonarQube
 
